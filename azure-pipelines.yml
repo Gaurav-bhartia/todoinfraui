@@ -1,0 +1,25 @@
+trigger: none
+
+pool: 
+
+steps:
+- task: TerraformInstaller@1
+  inputs:
+    terraformVersion: 'latest'
+
+- task: TerraformTask@5
+  inputs:
+    provider: 'azurerm'
+    command: 'init'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/dev'
+    backendServiceArm: 'todoinfra'
+    backendAzureRmStorageAccountName: 'nexgenstg123'
+    backendAzureRmContainerName: 'gennexcontainer'
+    backendAzureRmKey: 'gennex.tfstate'
+
+- task: TerraformTask@5
+  inputs:
+    provider: 'azurerm'
+    command: 'plan'
+    workingDirectory: '$(System.DefaultWorkingDirectory)/dev'
+    environmentServiceNameAzureRM: 'todoinfra'
