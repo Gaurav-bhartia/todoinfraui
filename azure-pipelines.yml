@@ -1,6 +1,6 @@
 trigger: none
 
-pool: 
+pool: todoinfra
 
 steps:
 - task: TerraformInstaller@1
