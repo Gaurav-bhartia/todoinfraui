@@ -1,0 +1,12 @@
+name : deploy
+run-name : Action show
+on : 
+  push :
+    branches :
+      - main 
+      - feature/123
+
+jobs : 
+  runs-on : ubuntu-latest
+  steps :
+    - run : echo "I Have Done This"
