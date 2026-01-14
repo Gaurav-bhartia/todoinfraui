@@ -6,10 +6,10 @@ terraform {
     }
   }
   backend "azurerm" {
-    resource_group_name = " "
-    storage_account_name = " "
-    container_name = " "
-    key = " "
+    resource_group_name = "probook"
+    storage_account_name = "nexgenstg1234"
+    container_name = "gennexcontainer"
+    key = "gennex.tfstate"
   }
 }
 
