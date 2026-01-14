@@ -6,7 +6,7 @@ on:
     - main 
     paths: 
     - '/*.tf' 
-    - '.github/'
+    - '.github/todoinfraui/dev'
 
 env: 
   TF_IN_AUTOMATION: 'true'
